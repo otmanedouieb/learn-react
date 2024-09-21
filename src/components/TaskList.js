@@ -2,15 +2,7 @@ import { useState } from "react";
 
 import Task from "./Task";
 
-const tasksList = [
-  { id: 1, name: "Start learn react", completed: true },
-  { id: 2, name: "Complete section one", completed: false },
-  { id: 3, name: "Complete section two", completed: false },
-  { id: 4, name: "Create simple app with react", completed: false },
-];
-
-export default function TaskList() {
-  const [tasks, setTasks] = useState(tasksList);
+export default function TaskList({ tasks, setTasks }) {
   const [show, setShow] = useState(true);
 
   function handleDelete(id) {
