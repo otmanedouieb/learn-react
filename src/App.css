@@ -1,6 +1,19 @@
 .App {
 }
 
+header.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: green;
+  padding: 5px;
+  background-color: rgb(170, 170, 170);
+}
+
+header.header img {
+  width: 50px;
+}
+
 .box {
   max-width: 80%;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.16);
@@ -48,4 +61,28 @@ li {
   border: none;
   border-radius: 3px;
   cursor: pointer;
+}
+
+.box-notice {
+  background-color: rgb(249, 31, 75);
+  position: relative;
+}
+
+.box-notice .close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 100%;
+  background-color: white;
+  color: red;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
 }
