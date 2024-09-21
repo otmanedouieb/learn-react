@@ -2,52 +2,39 @@ import { useState } from "react";
 
 import "./App.css";
 
+const tasksList = [
+  { id: 1, name: "Start learn react", completed: true },
+  { id: 2, name: "Complete section one", completed: false },
+  { id: 3, name: "Complete section two", completed: false },
+  { id: 4, name: "Create simple app with react", completed: false },
+];
+
 function App() {
-  const [count, setCount] = useState(0);
+  const [tasks, setTasks] = useState(tasksList);
 
-  function handelAdd() {
-    setCount((previousCount) => previousCount + 1);
-    setCount((previousCount) => previousCount + 1);
-    setCount((previousCount) => previousCount + 1);
-    // You can use
-    // setCount(count + 1)
-
-    // If the count is 0 and i execute this function with this code
-    // setCount((previousCount) => previousCount + 1);
-    // setCount((previousCount) => previousCount + 1);
-    // setCount((previousCount) => previousCount + 1);
-    // i will get 3
-    // but if the code is
-    // setCount(count + 1)
-    // setCount(count + 1)
-    // setCount(count + 1)
-    // i will get 1
+  function handleDelete(id) {
+    setTasks((previousTasks) => previousTasks.filter((task) => task.id !== id));
   }
 
-  function handelSub() {
-    setCount((previousCount) => previousCount - 1);
-    // You can use
-    // setCount(count - 1)
-  }
-
-  function handelReset() {
-    setCount((previousCount) => (previousCount = 0));
-    // You can use
-    // setCount(0)
-  }
   return (
     <div className="App">
       <div className="box">
-        <p>{count}</p>
-        <button onClick={handelAdd} className="add">
-          ADD
-        </button>
-        <button onClick={handelSub} className="sub">
-          SUB
-        </button>
-        <button onClick={handelReset} className="reset">
-          RESET
-        </button>
+        <h1>Task List</h1>
+        <ul>
+          {tasks.map((task) => (
+            <li key={task.id}>
+              <span>{task.id}</span> - <span>{task.name}</span>
+              <span>
+                <button
+                  onClick={() => handleDelete(task.id)}
+                  className="btn-delete"
+                >
+                  delete
+                </button>
+              </span>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

@@ -1,9 +1,8 @@
 .App {
-  text-align: center;
 }
 
 .box {
-  max-width: 200px;
+  max-width: 80%;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.16);
   padding: 10px;
   margin: 50px auto;
@@ -15,7 +14,7 @@ p {
   text-align: center;
 }
 
-button {
+/* button {
   padding: 10px;
   margin: 5px;
   font-size: 18px;
@@ -24,16 +23,35 @@ button {
   border: none;
   cursor: pointer;
   border-radius: 5px;
-}
+} */
 
-button.sub {
+/* button.sub {
   background-color: rgb(211, 26, 75);
 }
+ */
+/* 
+button.btn-del {
+  float: right;
+  display: block;
+} */
 
-button.add {
-  background-color: rgb(26, 211, 97);
+ul {
+  list-style: none;
+  font-size: 18px;
 }
 
-button.reset {
-  background-color: rgb(26, 85, 211);
+li {
+  margin: 6px;
+  padding: 10px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.393);
+}
+
+.btn-delete {
+  float: right;
+  background-color: rgb(211, 26, 75);
+  padding: 5px;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
 }
