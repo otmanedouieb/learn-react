@@ -7,8 +7,21 @@ function App() {
 
   function handelAdd() {
     setCount((previousCount) => previousCount + 1);
+    setCount((previousCount) => previousCount + 1);
+    setCount((previousCount) => previousCount + 1);
     // You can use
     // setCount(count + 1)
+
+    // If the count is 0 and i execute this function with this code
+    // setCount((previousCount) => previousCount + 1);
+    // setCount((previousCount) => previousCount + 1);
+    // setCount((previousCount) => previousCount + 1);
+    // i will get 3
+    // but if the code is
+    // setCount(count + 1)
+    // setCount(count + 1)
+    // setCount(count + 1)
+    // i will get 1
   }
 
   function handelSub() {
