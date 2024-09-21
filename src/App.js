@@ -1,17 +1,39 @@
+import { useState } from "react";
+
 import "./App.css";
 
 function App() {
-  let count = 0;
+  const [count, setCount] = useState(0);
 
+  function handelAdd() {
+    setCount((previousCount) => previousCount + 1);
+    // You can use
+    // setCount(count + 1)
+  }
+
+  function handelSub() {
+    setCount((previousCount) => previousCount - 1);
+    // You can use
+    // setCount(count - 1)
+  }
+
+  function handelReset() {
+    setCount((previousCount) => (previousCount = 0));
+    // You can use
+    // setCount(0)
+  }
   return (
     <div className="App">
       <div className="box">
         <p>{count}</p>
-        <button onClick={() => count + 1} className="add">
+        <button onClick={handelAdd} className="add">
           ADD
         </button>
-        <button onClick={() => count - 1} className="sub">
+        <button onClick={handelSub} className="sub">
           SUB
+        </button>
+        <button onClick={handelReset} className="reset">
+          RESET
         </button>
       </div>
     </div>

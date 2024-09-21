@@ -23,6 +23,7 @@ button {
   border-radius: 5px;
   border: none;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 button.sub {
@@ -31,4 +32,8 @@ button.sub {
 
 button.add {
   background-color: rgb(26, 211, 97);
+}
+
+button.reset {
+  background-color: rgb(26, 85, 211);
 }
