@@ -11,30 +11,46 @@ const tasksList = [
 
 function App() {
   const [tasks, setTasks] = useState(tasksList);
+  const [show, setShow] = useState(true);
 
   function handleDelete(id) {
     setTasks((previousTasks) => previousTasks.filter((task) => task.id !== id));
+  }
+
+  function handelToggle() {
+    setShow((previousShow) => (previousShow = !previousShow));
   }
 
   return (
     <div className="App">
       <div className="box">
         <h1>Task List</h1>
-        <ul>
-          {tasks.map((task) => (
-            <li key={task.id}>
-              <span>{task.id}</span> - <span>{task.name}</span>
-              <span>
-                <button
-                  onClick={() => handleDelete(task.id)}
-                  className="btn-delete"
-                >
-                  delete
-                </button>
-              </span>
-            </li>
-          ))}
-        </ul>
+
+        <div>
+          <button onClick={handelToggle} className="btn-toggle">
+            Toggle
+          </button>
+        </div>
+        {show === true && (
+          <ul>
+            {tasks.map((task) => (
+              <li
+                key={task.id}
+                className={task.completed ? "completed" : "not-completed"}
+              >
+                <span>{task.id}</span> - <span>{task.name}</span>
+                <span>
+                  <button
+                    onClick={() => handleDelete(task.id)}
+                    className="btn-delete"
+                  >
+                    delete
+                  </button>
+                </span>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );

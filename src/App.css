@@ -7,33 +7,13 @@
   padding: 10px;
   margin: 50px auto;
   border-radius: 5px;
+  overflow: hidden;
 }
 
 p {
   font-size: 18px;
   text-align: center;
 }
-
-/* button {
-  padding: 10px;
-  margin: 5px;
-  font-size: 18px;
-  color: white;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-} */
-
-/* button.sub {
-  background-color: rgb(211, 26, 75);
-}
- */
-/* 
-button.btn-del {
-  float: right;
-  display: block;
-} */
 
 ul {
   list-style: none;
@@ -43,12 +23,26 @@ ul {
 li {
   margin: 6px;
   padding: 10px;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.393);
 }
 
+.completed {
+  box-shadow: 0px 0px 4px rgba(9, 239, 166, 0.388);
+}
+.not-completed {
+  box-shadow: 0px 0px 4px rgba(236, 41, 80, 0.393);
+}
 .btn-delete {
   float: right;
   background-color: rgb(211, 26, 75);
+  padding: 5px;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn-toggle {
+  background-color: rgb(26, 72, 211);
   padding: 5px;
   color: white;
   border: none;
